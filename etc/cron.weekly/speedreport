@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# run python script to generate graphical speed report, than mail it to user
+
+python3 /srv/speedtest/speedtest.py
+echo "Report sent `date "+%Y-%m-%d %T"`" | mutt -a /srv/speedtest/speedtest.png -s "Your weekly SpeedTest report" -- user@email.com
+rm /srv/speedtest/speedtest.png

@@ -1,0 +1,10 @@
+/var/log/speedtest/speedtest.txt {
+    monthly
+    rotate 6
+    missingok
+    notifempty
+    postrotate
+	echo "server name	server id	latency	jitter	packet loss	download	upload	download bytes	upload bytes	share url	timestamp" > /var/log/speedtest/speedtest.txt
+    endscript
+    create 640 root adm
+		}
